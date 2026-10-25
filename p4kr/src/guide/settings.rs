@@ -109,9 +109,32 @@ pub fn render(s: &Settings) -> String {
     out
 }
 
+/// Windows denies access for a moment while another save replaces the file (rename over it).
+const IO_ATTEMPTS: u32 = if cfg!(windows) { 50 } else { 1 };
+const IO_RETRY: std::time::Duration = std::time::Duration::from_millis(10);
+
+/// Runs `op`, retrying a transient PermissionDenied (Windows) a bounded number of times.
+fn retry_denied<T>(mut op: impl FnMut() -> io::Result<T>) -> io::Result<T> {
+    let mut attempt = 1;
+    loop {
+        match op() {
+            Err(e) if e.kind() == io::ErrorKind::PermissionDenied && attempt < IO_ATTEMPTS => {
+                attempt += 1;
+                std::thread::sleep(IO_RETRY);
+            }
+            other => return other,
+        }
+    }
+}
+
+/// Reads the settings file, retrying a transient PermissionDenied (Windows) a few times.
+fn read_settings(path: &Path) -> io::Result<String> {
+    retry_denied(|| std::fs::read_to_string(path))
+}
+
 pub fn load(dir: &Path, lang: Lang) -> (Settings, Option<String>) {
     let path = dir.join(FILE);
-    match std::fs::read_to_string(&path) {
+    match read_settings(&path) {
         Err(e) if e.kind() == io::ErrorKind::NotFound => (Settings::default(), None),
         Err(e) => (
             Settings::default(),
@@ -164,7 +187,8 @@ pub fn save(dir: &Path, s: &Settings, lang: Lang) -> io::Result<()> {
         f.write_all(render(s).as_bytes())?;
         f.sync_all()?;
         drop(f);
-        std::fs::rename(&tmp, dir.join(FILE))
+        let dest = dir.join(FILE);
+        retry_denied(|| std::fs::rename(&tmp, &dest))
     })();
     if result.is_err() {
         let _ = std::fs::remove_file(&tmp);
@@ -186,6 +210,15 @@ mod tests {
         let d = std::env::temp_dir().join(format!("p4kr-settings-{}-{name}", std::process::id()));
         let _ = std::fs::remove_dir_all(&d);
         d
+    }
+
+    #[test]
+    fn read_settings_on_a_missing_file_returns_not_found_without_retrying() {
+        let d = temp_dir("read-missing");
+        let start = std::time::Instant::now();
+        let e = read_settings(&d.join(FILE)).unwrap_err();
+        assert_eq!(e.kind(), io::ErrorKind::NotFound);
+        assert!(start.elapsed() < IO_RETRY * 20);
     }
 
     #[test]
