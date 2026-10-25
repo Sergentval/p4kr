@@ -1,0 +1,72 @@
+[
+  {
+    "case": "stocké",
+    "index": 0,
+    "expect": "ok",
+    "error": null,
+    "sha256": "6483afe8e8afa79aae4f42f2d48a41334e33a2168f93d8f6b3efe0a77df15b41"
+  },
+  {
+    "case": "zstd",
+    "index": 1,
+    "expect": "ok",
+    "error": null,
+    "sha256": "70a03ff14dfe956f6fb5d066fca1a6e561fdfc0311fd10999c3b2013fa02c37e"
+  },
+  {
+    "case": "chiffré",
+    "index": 2,
+    "expect": "ok",
+    "error": null,
+    "sha256": "bea005de9e410b2baa5afa818177ca0d09f9c23f06a32224d10f2bc31b9f6b80"
+  },
+  {
+    "case": "chiffré-fin-nulle",
+    "index": 3,
+    "expect": "ok",
+    "error": null,
+    "sha256": "44ced9f7cc16b7b36a1f3273c08f9668ec3b1bbc99ca7f3b55db3230a2bca20f"
+  },
+  {
+    "case": "chiffré-fin-nulle-brute",
+    "index": 4,
+    "expect": "ok",
+    "error": null,
+    "sha256": "aad7301410ca426d2d8fef5cbe79fde64e43da108844e8e16d3737ca17029978"
+  },
+  {
+    "case": "chiffré-extra-déplacé",
+    "index": 5,
+    "expect": "ok",
+    "error": null,
+    "sha256": "d1e6d9b8820be0be606f8eb89d84cecc3565f7577cef179f9ceaa6ab530a9304"
+  },
+  {
+    "case": "crc-faux",
+    "index": 6,
+    "expect": "error",
+    "error": "crc",
+    "sha256": null
+  },
+  {
+    "case": "sha-faux",
+    "index": 7,
+    "expect": "error",
+    "error": "sha5003",
+    "sha256": null
+  },
+  {
+    "case": "octets-après-trame",
+    "index": 8,
+    "expect": "error",
+    "error": "zstd",
+    "sha256": null
+  },
+  {
+    "case": "sans-signature-zstd",
+    "index": 9,
+    "expect": "error",
+    "error": "zstd",
+    "sha256": null
+  }
+]

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="440" viewBox="0 0 760 440" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+<style>.g{font-size:13px;font-weight:600;fill:#202124}.t{font-size:12px;fill:#3c4043}.v{font-size:12px;fill:#202124}.h{font-size:15px;font-weight:700;fill:#202124}</style>
+<rect width="760" height="440" fill="#ffffff" rx="6"/>
+<text x="12" y="28" class="h">Open and extract (warm cache, lower is better)</text>
+<text x="12" y="60" class="g">Open the archive</text>
+<rect x="230" y="66" width="10.3" height="18" fill="#2f7d4f" rx="2"/>
+<text x="224" y="79" class="t" text-anchor="end">p4kr</text>
+<text x="246.3" y="79" class="v">0.55 s</text>
+<rect x="230" y="88" width="136.4" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="101" class="t" text-anchor="end">unp4k</text>
+<text x="372.4" y="101" class="v">7.29 s ×13.2</text>
+<rect x="230" y="110" width="125.7" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="123" class="t" text-anchor="end">StarBreaker</text>
+<text x="361.7" y="123" class="v">6.72 s ×12.2</text>
+<text x="12" y="154" class="g">Extract 1 file</text>
+<rect x="230" y="160" width="11.8" height="18" fill="#2f7d4f" rx="2"/>
+<text x="224" y="173" class="t" text-anchor="end">p4kr</text>
+<text x="247.8" y="173" class="v">0.63 s</text>
+<rect x="230" y="182" width="166.1" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="195" class="t" text-anchor="end">unp4k</text>
+<text x="402.1" y="195" class="v">8.88 s ×14.1</text>
+<rect x="230" y="204" width="125.1" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="217" class="t" text-anchor="end">StarBreaker</text>
+<text x="361.1" y="217" class="v">6.69 s ×10.6</text>
+<text x="12" y="248" class="g">Extract 1 folder</text>
+<rect x="230" y="254" width="35.4" height="18" fill="#2f7d4f" rx="2"/>
+<text x="224" y="267" class="t" text-anchor="end">p4kr</text>
+<text x="271.4" y="267" class="v">1.89 s</text>
+<rect x="230" y="276" width="410.0" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="289" class="t" text-anchor="end">unp4k</text>
+<text x="646.0" y="289" class="v">21.92 s ×11.6</text>
+<rect x="230" y="298" width="157.3" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="311" class="t" text-anchor="end">StarBreaker</text>
+<text x="393.3" y="311" class="v">8.41 s ×4.4</text>
+<text x="12" y="342" class="g">Extract every file of 1 extension</text>
+<rect x="230" y="348" width="31.4" height="18" fill="#2f7d4f" rx="2"/>
+<text x="224" y="361" class="t" text-anchor="end">p4kr</text>
+<text x="267.4" y="361" class="v">1.68 s</text>
+<rect x="230" y="370" width="324.3" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="383" class="t" text-anchor="end">unp4k</text>
+<text x="560.3" y="383" class="v">17.34 s ×10.3</text>
+<rect x="230" y="392" width="139.3" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="405" class="t" text-anchor="end">StarBreaker</text>
+<text x="375.3" y="405" class="v">7.45 s ×4.4</text>
+</svg>

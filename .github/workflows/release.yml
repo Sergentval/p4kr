@@ -1,0 +1,116 @@
+name: release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: read
+env:
+  CARGO_TERM_COLOR: never
+  P4KR_MIN_FREE_GB: "0"
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Tag and Cargo.toml version
+        shell: bash
+        run: |
+          tag="$GITHUB_REF_NAME"
+          [[ "$tag" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?$ ]] || { echo "invalid tag: $tag"; exit 1; }
+          base="${tag#v}"; base="${base%%-*}"
+          ver=$(sed -n 's/^version = "\(.*\)"/\1/p' Cargo.toml | head -n 1)
+          [ "$base" = "$ver" ] || { echo "tag $tag != version $ver in Cargo.toml"; exit 1; }
+  build:
+    needs: version
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: windows-latest, target: x86_64-pc-windows-msvc, name: windows-x64, exe: p4kr.exe, test: true }
+          - { os: ubuntu-22.04, target: x86_64-unknown-linux-gnu, name: linux-x64, exe: p4kr, test: true }
+          - { os: macos-15, target: aarch64-apple-darwin, name: macos-arm64, exe: p4kr, test: true }
+          - { os: macos-15, target: x86_64-apple-darwin, name: macos-x64, exe: p4kr, test: false }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - name: Tools
+        shell: bash
+        run: |
+          rustup target add ${{ matrix.target }}
+          if [ "${{ matrix.name }}" = macos-x64 ]; then
+            sudo softwareupdate --install-rosetta --agree-to-license
+            arch -x86_64 /usr/bin/true
+          fi
+      - name: Tests
+        if: matrix.test
+        shell: bash
+        run: cargo test --release --locked -p p4kr-core -p p4kr-cryxml -p p4kr-xmlwrite -p p4kr-dataforge -p p4kr
+      - name: Binary
+        shell: bash
+        run: cargo build --release --locked -p p4kr --target ${{ matrix.target }}
+      - name: Required glibc version (at most 2.35)
+        if: matrix.name == 'linux-x64'
+        shell: bash
+        run: |
+          v=$(objdump -T target/x86_64-unknown-linux-gnu/release/p4kr | grep -o 'GLIBC_[0-9.]*' | sort -Vu | tail -n 1)
+          echo "$v"
+          [ "$(printf '%s\n' "${v#GLIBC_}" 2.35 | sort -V | tail -n 1)" = 2.35 ] || { echo "glibc required > 2.35: $v"; exit 1; }
+      - name: Version and reference output
+        shell: bash
+        run: |
+          bin="target/${{ matrix.target }}/release/${{ matrix.exe }}"
+          ver="${GITHUB_REF_NAME#v}"; ver="${ver%%-*}"
+          [ "$("$bin" --version)" = "p4kr $ver" ] || { echo "unexpected version: $("$bin" --version)"; exit 1; }
+          "$bin" extract testdata/release.p4k --out ref-out --xml --key-file testdata/synth.key.toml --quiet
+          ${{ runner.os == 'Windows' && 'python' || 'python3' }} -I dist/tree_hash.py ref-out > "hash-${{ matrix.name }}.txt"
+      - name: Archive
+        shell: bash
+        run: |
+          pkg="p4kr-${GITHUB_REF_NAME}-${{ matrix.name }}"
+          mkdir "$pkg"
+          cp "target/${{ matrix.target }}/release/${{ matrix.exe }}" dist/README.txt dist/LISEZMOI.txt LICENSE-MIT LICENSE-APACHE "$pkg/"
+          if [ "${{ matrix.name }}" = windows-x64 ]; then
+            7z a "$pkg.zip" "$pkg" >/dev/null
+            listing=$(7z l -ba "$pkg.zip" | tr -d '\r' | awk '{print $NF}' | tr '\\' '/' | sed 's#/$##' | sort)
+          else
+            COPYFILE_DISABLE=1 tar czf "$pkg.tar.gz" "$pkg"
+            listing=$(tar tzf "$pkg.tar.gz" | sed 's#/$##' | sort)
+          fi
+          expected=$(printf '%s\n' "$pkg" "$pkg/README.txt" "$pkg/LISEZMOI.txt" "$pkg/LICENSE-MIT" "$pkg/LICENSE-APACHE" "$pkg/${{ matrix.exe }}" | sort)
+          [ "$listing" = "$expected" ] || { echo "unexpected archive contents:"; echo "$listing"; exit 1; }
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: ${{ matrix.name }}
+          path: |
+            p4kr-*.zip
+            p4kr-*.tar.gz
+            hash-*.txt
+          if-no-files-found: error
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
+        with:
+          path: art
+          merge-multiple: true
+      - name: Identical outputs on the 4 targets
+        shell: bash
+        run: |
+          cd art
+          ls hash-*.txt | wc -l | grep -qx 4 || { echo "a hash file is missing"; exit 1; }
+          first=$(ls hash-*.txt | head -n 1)
+          for h in hash-*.txt; do cmp "$first" "$h" || { echo "$h differs from $first"; diff "$first" "$h"; exit 1; }; done
+      - name: Draft release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd art
+          sha256sum p4kr-* > SHA256SUMS
+          pre=""; [[ "$GITHUB_REF_NAME" == *-rc.* ]] && pre="--prerelease"
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --draft $pre \
+            --title "p4kr $GITHUB_REF_NAME" --notes "p4kr $GITHUB_REF_NAME binaries. See README.txt in the archive." \
+            p4kr-* SHA256SUMS

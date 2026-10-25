@@ -1,0 +1,16 @@
+[package]
+name = "p4kr-cryxml"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "Converts CryXmlB binary XML to text XML."
+
+[dependencies]
+thiserror = "2"
+p4kr-xmlwrite = { path = "../p4kr-xmlwrite" }
+
+[dev-dependencies]
+serde_json = "1"

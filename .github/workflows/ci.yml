@@ -1,0 +1,35 @@
+name: ci
+on:
+  push: { branches: ['**'] }
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      all_os:
+        description: "Also test Windows and macOS"
+        type: boolean
+        default: true
+permissions:
+  contents: read
+env:
+  CARGO_TERM_COLOR: never
+  P4KR_MIN_FREE_GB: "0"
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: python3 dist/check_french.py
+      - run: python3 docs/benchmarks/make_charts.py --check
+      - run: cargo fmt --check
+      - run: cargo clippy --release --locked --all-targets -- -D warnings
+      - run: cargo test --release --locked
+  other-os:
+    if: github.event_name == 'workflow_dispatch' && inputs.all_os
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-15]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - run: cargo test --release --locked -p p4kr-core -p p4kr-cryxml -p p4kr-xmlwrite -p p4kr-dataforge -p p4kr

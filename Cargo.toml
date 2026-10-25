@@ -1,0 +1,16 @@
+[workspace]
+resolver = "3"
+members = ["p4kr-core", "p4kr", "p4kr-cryxml", "p4kr-xmlwrite", "p4kr-dataforge"]
+
+[workspace.package]
+edition = "2024"
+version = "1.0.0"
+publish = false
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Sergentval/p4kr"
+authors = ["Sergentval"]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

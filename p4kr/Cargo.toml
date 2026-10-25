@@ -1,0 +1,21 @@
+[package]
+name = "p4kr"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "Command-line reader for .p4k archives: list, extract, verify, XML and DataForge conversion."
+
+[dependencies]
+p4kr-core = { path = "../p4kr-core" }
+p4kr-cryxml = { path = "../p4kr-cryxml" }
+p4kr-dataforge = { path = "../p4kr-dataforge" }
+clap = { version = "4", features = ["derive"] }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_Globalization"] }
+
+[dev-dependencies]
+tempfile = "3"

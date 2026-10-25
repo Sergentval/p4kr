@@ -1,0 +1,4700 @@
+[
+  {
+    "name": "attr-char-01",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0001b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378313b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-02",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0002b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378323b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-03",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0003b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378333b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-04",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0004b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378343b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-05",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0005b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378353b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-06",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0006b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378363b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-07",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0007b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378373b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-08",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\bb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378383b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-09",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\tb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378393b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-0a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\nb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378413b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-0b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u000Bb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378423b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-0c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\fb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378433b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-0d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\rb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378443b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-0e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u000Eb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378453b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-0f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u000Fb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378463b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-10",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0010b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831303b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-11",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0011b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831313b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-12",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0012b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831323b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-13",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0013b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831333b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-14",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0014b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831343b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-15",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0015b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831353b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-16",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0016b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831363b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-17",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0017b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831373b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-18",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0018b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831383b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-19",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0019b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831393b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-1a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u001Ab"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831413b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-1b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u001Bb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831423b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-1c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u001Cb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831433b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-1d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u001Db"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831443b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-1e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u001Eb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831453b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-1f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u001Fb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126237831463b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-20",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261206222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-21",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a!b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261216222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-22",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0022b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612671756f743b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-23",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a#b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261236222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-24",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a$b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261246222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-25",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a%b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261256222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-26",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0026b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d226126616d703b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-27",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0027b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261276222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-28",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a(b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261286222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-29",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a)b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261296222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-2a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a*b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-2b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u002Bb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-2c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a,b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-2d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a-b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-2e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a.b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-2f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a/b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-30",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a0b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261306222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-31",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a1b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261316222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-32",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a2b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261326222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-33",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a3b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261336222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-34",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a4b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261346222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-35",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a5b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261356222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-36",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a6b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261366222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-37",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a7b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261376222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-38",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a8b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261386222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-39",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a9b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261396222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-3a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a:b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22613a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-3b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a;b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22613b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-3c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u003Cb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261266c743b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-3d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a=b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22613d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-3e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u003Eb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22612667743b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-3f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a?b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22613f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-40",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a@b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261406222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-41",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aAb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261416222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-42",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aBb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261426222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-43",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aCb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261436222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-44",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aDb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261446222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-45",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aEb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261456222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-46",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aFb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261466222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-47",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aGb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261476222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-48",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aHb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261486222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-49",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aIb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261496222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-4a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aJb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22614a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-4b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aKb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22614b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-4c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aLb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22614c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-4d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aMb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22614d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-4e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aNb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22614e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-4f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aOb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22614f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-50",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aPb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261506222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-51",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aQb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261516222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-52",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aRb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261526222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-53",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aSb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261536222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-54",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aTb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261546222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-55",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aUb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261556222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-56",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aVb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261566222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-57",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aWb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261576222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-58",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aXb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261586222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-59",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aYb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261596222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-5a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aZb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22615a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-5b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a[b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22615b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-5c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\\b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22615c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-5d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a]b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22615d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-5e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a^b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22615e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-5f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a_b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22615f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-60",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0060b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261606222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-61",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aab"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261616222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-62",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "abb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261626222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-63",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "acb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261636222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-64",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "adb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261646222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-65",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aeb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261656222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-66",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "afb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261666222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-67",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "agb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261676222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-68",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "ahb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261686222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-69",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aib"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261696222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-6a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "ajb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22616a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-6b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "akb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22616b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-6c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "alb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22616c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-6d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "amb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22616d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-6e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "anb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22616e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-6f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aob"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22616f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-70",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "apb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261706222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-71",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aqb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261716222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-72",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "arb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261726222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-73",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "asb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261736222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-74",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "atb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261746222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-75",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "aub"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261756222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-76",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "avb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261766222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-77",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "awb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261776222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-78",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "axb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261786222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-79",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "ayb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261796222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-7a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "azb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22617a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-7b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a{b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22617b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-7c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a|b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22617c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-7d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a}b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22617d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-7e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a~b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22617e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-7f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u007Fb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22617f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-80",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0080b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2806222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-81",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0081b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2816222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-82",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0082b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2826222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-83",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0083b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2836222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-84",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0084b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2846222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-85",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0085b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2856222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-86",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0086b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2866222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-87",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0087b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2876222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-88",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0088b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2886222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-89",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0089b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2896222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-8a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u008Ab"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c28a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-8b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u008Bb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c28b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-8c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u008Cb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c28c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-8d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u008Db"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c28d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-8e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u008Eb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c28e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-8f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u008Fb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c28f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-90",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0090b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2906222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-91",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0091b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2916222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-92",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0092b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2926222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-93",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0093b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2936222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-94",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0094b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2946222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-95",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0095b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2956222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-96",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0096b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2966222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-97",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0097b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2976222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-98",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0098b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2986222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-99",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u0099b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2996222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-9a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u009Ab"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c29a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-9b",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u009Bb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c29b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-9c",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u009Cb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c29c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-9d",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u009Db"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c29d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-9e",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u009Eb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c29e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-9f",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u009Fb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c29f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a0",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A0b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a06222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a1",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A1b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a16222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a2",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A2b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a26222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a3",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A3b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a36222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a4",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A4b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a46222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a5",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A5b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a56222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a6",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A6b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a66222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a7",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A7b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a76222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a8",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A8b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a86222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-a9",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00A9b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2a96222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-aa",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00AAb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2aa6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ab",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00ABb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2ab6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ac",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00ACb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2ac6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ad",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00ADb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2ad6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ae",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00AEb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2ae6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-af",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00AFb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2af6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b0",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B0b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b06222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b1",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B1b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b16222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b2",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B2b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b26222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b3",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B3b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b36222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b4",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B4b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b46222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b5",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B5b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b56222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b6",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B6b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b66222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b7",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B7b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b76222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b8",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B8b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b86222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-b9",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00B9b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2b96222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ba",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00BAb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2ba6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-bb",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00BBb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2bb6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-bc",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00BCb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2bc6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-bd",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00BDb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2bd6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-be",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00BEb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2be6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-bf",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00BFb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c2bf6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c0",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C0b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3806222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c1",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C1b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3816222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c2",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C2b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3826222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c3",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C3b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3836222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c4",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C4b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3846222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c5",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C5b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3856222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c6",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C6b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3866222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c7",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C7b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3876222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c8",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C8b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3886222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-c9",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00C9b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3896222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ca",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00CAb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c38a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-cb",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00CBb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c38b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-cc",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00CCb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c38c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-cd",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00CDb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c38d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ce",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00CEb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c38e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-cf",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00CFb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c38f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d0",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D0b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3906222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d1",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D1b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3916222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d2",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D2b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3926222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d3",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D3b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3936222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d4",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D4b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3946222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d5",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D5b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3956222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d6",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D6b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3966222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d7",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D7b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3976222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d8",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D8b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3986222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-d9",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00D9b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3996222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-da",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00DAb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c39a6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-db",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00DBb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c39b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-dc",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00DCb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c39c6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-dd",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00DDb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c39d6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-de",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00DEb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c39e6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-df",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00DFb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c39f6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e0",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E0b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a06222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e1",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E1b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a16222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e2",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E2b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a26222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e3",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E3b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a36222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e4",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E4b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a46222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e5",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E5b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a56222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e6",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E6b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a66222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e7",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E7b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a76222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e8",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E8b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a86222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-e9",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00E9b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3a96222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ea",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00EAb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3aa6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-eb",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00EBb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3ab6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ec",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00ECb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3ac6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ed",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00EDb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3ad6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ee",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00EEb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3ae6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ef",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00EFb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3af6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f0",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F0b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b06222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f1",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F1b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b16222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f2",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F2b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b26222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f3",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F3b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b36222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f4",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F4b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b46222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f5",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F5b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b56222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f6",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F6b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b66222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f7",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F7b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b76222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f8",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F8b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b86222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-f9",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00F9b"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3b96222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-fa",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00FAb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3ba6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-fb",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00FBb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3bb6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-fc",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00FCb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3bc6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-fd",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00FDb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3bd6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-fe",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00FEb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3be6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-char-ff",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\u00FFb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261c3bf6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-lf",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\nb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378413b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-cr",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\rb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378443b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-crlf",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\r\nb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378443b262378413b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-tab",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "a\tb"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2261262378393b6222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-specials",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "\u003C\u003E\u0026\u0022\u0027"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d22266c743b2667743b26616d703b2671756f743b2722202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-empty",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          ""
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d2222202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "element-empty",
+    "tree": {
+      "n": "r",
+      "a": [],
+      "c": []
+    },
+    "xml_hex": "3c72202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "element-nested-4",
+    "tree": {
+      "n": "a",
+      "a": [],
+      "c": [
+        {
+          "n": "b",
+          "a": [],
+          "c": [
+            {
+              "n": "c",
+              "a": [],
+              "c": [
+                {
+                  "n": "d",
+                  "a": [
+                    [
+                      "k",
+                      "v"
+                    ]
+                  ],
+                  "c": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "xml_hex": "3c613e0d0a20203c623e0d0a202020203c633e0d0a2020202020203c64206b3d227622202f3e0d0a202020203c2f633e0d0a20203c2f623e0d0a3c2f613e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "element-siblings",
+    "tree": {
+      "n": "r",
+      "a": [],
+      "c": [
+        {
+          "n": "x",
+          "a": [
+            [
+              "k",
+              "1"
+            ]
+          ],
+          "c": []
+        },
+        {
+          "n": "y",
+          "a": [],
+          "c": []
+        },
+        {
+          "n": "x",
+          "a": [
+            [
+              "k",
+              "2"
+            ]
+          ],
+          "c": []
+        }
+      ]
+    },
+    "xml_hex": "3c723e0d0a20203c78206b3d223122202f3e0d0a20203c79202f3e0d0a20203c78206b3d223222202f3e0d0a3c2f723e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "attr-repeated",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "k",
+          "first"
+        ],
+        [
+          "k",
+          "second"
+        ],
+        [
+          "j",
+          "x"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72206b3d227365636f6e6422206a3d227822202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-element-space",
+    "tree": {
+      "n": "a b",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The \u0027 \u0027 character, hexadecimal value 0x20, cannot be included in a name.",
+    "stage": "create"
+  },
+  {
+    "name": "name-attr-space",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "a b",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The \u0027 \u0027 character, hexadecimal value 0x20, cannot be included in a name.",
+    "stage": "create"
+  },
+  {
+    "name": "name-element-digit",
+    "tree": {
+      "n": "1a",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "Invalid name character in \u00271a\u0027. The \u00271\u0027 character, hexadecimal value 0x31, cannot be included in a name.",
+    "stage": "write"
+  },
+  {
+    "name": "name-attr-digit",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "1a",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "Invalid name character in \u00271a\u0027. The \u00271\u0027 character, hexadecimal value 0x31, cannot be included in a name.",
+    "stage": "write"
+  },
+  {
+    "name": "name-element-empty",
+    "tree": {
+      "n": "",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The local name for elements or attributes cannot be null or an empty string.",
+    "stage": "create"
+  },
+  {
+    "name": "name-attr-empty",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The attribute local name cannot be empty.",
+    "stage": "create"
+  },
+  {
+    "name": "name-element-dash",
+    "tree": {
+      "n": "-a",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "Invalid name character in \u0027-a\u0027. The \u0027-\u0027 character, hexadecimal value 0x2D, cannot be included in a name.",
+    "stage": "write"
+  },
+  {
+    "name": "name-attr-dash",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "-a",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "Invalid name character in \u0027-a\u0027. The \u0027-\u0027 character, hexadecimal value 0x2D, cannot be included in a name.",
+    "stage": "write"
+  },
+  {
+    "name": "name-element-accent",
+    "tree": {
+      "n": "\u00E9",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3cc3a9206b3d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-attr-accent",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "\u00E9",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c7220c3a93d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-element-colon",
+    "tree": {
+      "n": "a:b",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "Cannot use a prefix with an empty namespace.",
+    "stage": "write"
+  },
+  {
+    "name": "name-attr-colon",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "a:b",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c7220623d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-element-colon-lead",
+    "tree": {
+      "n": ":a",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The \u0027:\u0027 character, hexadecimal value 0x3A, cannot be included in a name.",
+    "stage": "create"
+  },
+  {
+    "name": "name-attr-colon-lead",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          ":a",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The \u0027:\u0027 character, hexadecimal value 0x3A, cannot be included in a name.",
+    "stage": "create"
+  },
+  {
+    "name": "name-element-colon-trail",
+    "tree": {
+      "n": "a:",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The \u0027:\u0027 character, hexadecimal value 0x3A, cannot be included in a name.",
+    "stage": "create"
+  },
+  {
+    "name": "name-attr-colon-trail",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "a:",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The \u0027:\u0027 character, hexadecimal value 0x3A, cannot be included in a name.",
+    "stage": "create"
+  },
+  {
+    "name": "name-element-xmlns",
+    "tree": {
+      "n": "xmlns",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c786d6c6e73206b3d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-attr-xmlns",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "xmlns",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "The prefix \u0027\u0027 cannot be redefined from \u0027\u0027 to \u0027v\u0027 within the same start element tag.",
+    "stage": "write"
+  },
+  {
+    "name": "name-element-xmlns-a",
+    "tree": {
+      "n": "xmlns:a",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "Cannot use a prefix with an empty namespace.",
+    "stage": "write"
+  },
+  {
+    "name": "name-attr-xmlns-a",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "xmlns:a",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c7220786d6c6e733a613d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-element-xml-lang",
+    "tree": {
+      "n": "xml:lang",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": null,
+    "error": "Cannot use a prefix with an empty namespace.",
+    "stage": "write"
+  },
+  {
+    "name": "name-attr-xml-lang",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "xml:lang",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c7220786d6c3a6c616e673d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-element-dot",
+    "tree": {
+      "n": "a.b",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c612e62206b3d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-attr-dot",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "a.b",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c7220612e623d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-element-under",
+    "tree": {
+      "n": "_a",
+      "a": [
+        [
+          "k",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c5f61206b3d227622202f3e",
+    "error": null,
+    "stage": null
+  },
+  {
+    "name": "name-attr-under",
+    "tree": {
+      "n": "r",
+      "a": [
+        [
+          "_a",
+          "v"
+        ]
+      ],
+      "c": []
+    },
+    "xml_hex": "3c72205f613d227622202f3e",
+    "error": null,
+    "stage": null
+  }
+]

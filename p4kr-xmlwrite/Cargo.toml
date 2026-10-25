@@ -1,0 +1,15 @@
+[package]
+name = "p4kr-xmlwrite"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "XML tree and indented writer shared by the p4kr converters."
+
+[dependencies]
+thiserror = "2"
+
+[dev-dependencies]
+serde_json = "1"

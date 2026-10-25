@@ -1,0 +1,173 @@
+p4kr - lecteur d'archives .p4k
+==============================
+
+p4kr lit une archive de données .p4k (ZIP64 avec chiffrement AES et
+compression zstd), liste son contenu, extrait des fichiers et vérifie leur
+intégrité. Avec l'option --xml, les XML binaires et la base DataForge (.dcb)
+sont convertis en XML texte, octet pour octet comme unp4k et unforge sous
+Linux ou macOS. Les fins de ligne sont toujours LF : unforge sous Windows
+écrit des CRLF, seule différence (même contenu XML).
+
+p4kr est un programme en ligne de commande : il n'a pas de fenêtre. Ouvre un
+terminal (PowerShell sous Windows, Terminal sous macOS et Linux) dans le
+dossier qui contient p4kr.
+
+Dans ce dossier, la commande s'écrit ./p4kr sous macOS et Linux, et
+.\p4kr.exe dans PowerShell. Les exemples ci-dessous utilisent ./p4kr ; sous
+Windows, remplace-le partout par .\p4kr.exe.
+
+Langue : le mode guidé suit la langue du système (français ou anglais) ;
+pour en forcer une, définis P4KR_LANG=fr ou P4KR_LANG=en. La sortie en ligne
+de commande est toujours en anglais. README.txt est la version anglaise de
+ce fichier.
+
+
+1. MODE GUIDÉ (le plus simple)
+------------------------------
+
+Lance ./p4kr sans argument dans un terminal, ou :
+
+    ./p4kr guide
+
+(Sous Windows, un double-clic sur p4kr.exe ouvre aussi une console.)
+
+Un menu propose trois choix :
+
+    1) Base DataForge -> XML
+    2) Extraction ciblée
+    3) Vérifier l'archive
+    q) Quitter
+
+Le guide demande ensuite :
+
+  - Archive (.p4k) : le chemin de l'archive. Tu peux glisser le fichier dans
+    le terminal ; les espaces échappés et les guillemets sont compris.
+  - Fichier de clé : le fichier de clé (voir plus bas). Réponse vide ou "-"
+    = sans clé. Si une clé est déjà retenue, elle est proposée par défaut ;
+    "-" signifie toujours "pas de clé" et efface la clé retenue.
+  - Choix 2 seulement : un dossier (d) ou une extension (e) de l'archive, puis
+    si les XML binaires doivent être convertis en XML texte.
+  - Dossier de sortie (choix 1 et 2 seulement) : proposé sous le dossier
+    retenu, avec la date du jour (UTC), par exemple dataforge-AAAA-MM-JJ ou
+    extraction-AAAA-MM-JJ.
+
+Le guide résume ce qui va être fait et demande confirmation avant de lancer.
+Une fois l'extraction finie, il affiche « Terminé en <durée> » puis, dans un
+terminal, propose d'ouvrir le dossier de sortie (choix 1 et 2).
+Il retient l'archive, le fichier de clé et le dossier de sortie (jamais le
+contenu de la clé) dans un fichier p4kr.toml :
+
+  Windows : %APPDATA%\p4kr
+  macOS   : ~/Library/Application Support/p4kr
+  Linux   : $XDG_CONFIG_HOME/p4kr, sinon ~/.config/p4kr
+
+La variable P4KR_CONFIG_DIR=<dossier> remplace cet emplacement. Ctrl+D
+(Ctrl+Z puis Entrée sous Windows) termine le guide proprement.
+
+
+2. COMMANDES
+------------
+
+Lister les entrées (--prefix, --ext ou --exact pour choisir) :
+
+    ./p4kr list Data.p4k --ext .dcb
+
+Chaque option se répète : OU entre ses valeurs, ET entre --prefix et --ext.
+
+    ./p4kr list Data.p4k --ext .xml --ext .ini --ext .dcb
+    ./p4kr list Data.p4k --prefix Data/Libs --ext .xml
+
+Extraire, avec conversion XML, vers un dossier :
+
+    ./p4kr extract Data.p4k --out sortie --xml --key-file cle.toml
+    ./p4kr extract Data.p4k --out sortie --prefix Data/Libs --xml --key-file cle.toml
+
+Vérifier (CRC32C et sha256), sans rien écrire :
+
+    ./p4kr verify Data.p4k --key-file cle.toml
+
+Convertir une base DataForge locale en un XML par enregistrement :
+
+    ./p4kr dcb Game.dcb --out sortie
+
+Écrire une seule entrée sur la sortie standard :
+
+    ./p4kr cat Data.p4k --exact Data/Chemin/fichier.xml --xml --key-file cle.toml > fichier.xml
+
+Convertir un fichier XML binaire local :
+
+    ./p4kr xml entree.xml sortie.xml
+
+Options utiles : --quiet (sans barre de progression), --threads N (0 = tous
+les coeurs ; extract, verify, dcb), --verify (extract : vérifie aussi le
+sha256), --fail-fast (extract : s'arrête à la première entrée en erreur). Codes de sortie : 0 tout va bien, 1 des entrées sont en erreur,
+2 configuration, 3 ouverture impossible.
+
+Quand un enregistrement DataForge a le même chemin qu'une entrée de
+l'archive, l'enregistrement est écrit là et l'entrée est gardée à côté sous
+<nom>.p4k-entry.<extension>, avec un avertissement (code de sortie
+inchangé).
+
+
+3. FICHIER DE CLÉ
+-----------------
+
+Aucune clé n'est fournie avec p4kr. Si ton archive en demande une, crée un
+fichier texte (par exemple cle.toml) contenant une seule ligne :
+
+    aes_key = "<32 caractères hexadécimaux>"
+
+puis passe-le avec --key-file cle.toml, ou donne son chemin au guide. Garde ce
+fichier pour toi.
+
+
+4. ESPACE LIBRE
+---------------
+
+Avant une extraction, p4kr exige 20 Gio libres sur le disque de sortie. Pour
+changer ce seuil (en Gio), définis la variable P4KR_MIN_FREE_GB :
+
+    Linux, macOS :   P4KR_MIN_FREE_GB=5 ./p4kr extract ...
+    PowerShell   :   $env:P4KR_MIN_FREE_GB = "5"
+
+
+5. PREMIER LANCEMENT SELON LE SYSTÈME
+-------------------------------------
+
+Vérifie d'abord l'archive téléchargée avec le fichier SHA256SUMS publié à côté
+(par exemple "sha256sum -c SHA256SUMS" sous Linux, "shasum -a 256 -c
+SHA256SUMS" sous macOS).
+
+Windows : vérifie l'archive dans PowerShell, puis compare avec SHA256SUMS :
+
+    Get-FileHash p4kr-<version>-windows-x64.zip
+
+p4kr n'est pas signé. Au premier lancement, SmartScreen peut
+afficher "Windows a protégé votre ordinateur". Clique sur "Informations
+complémentaires", puis sur "Exécuter quand même".
+
+macOS : p4kr n'est pas signé. La première fois, fais un clic droit sur p4kr,
+puis Ouvrir. Ou, dans le terminal, retire la quarantaine :
+
+    xattr -d com.apple.quarantine p4kr
+
+Sous macOS 15 et suivants, si le blocage persiste : Réglages Système ->
+Confidentialité et sécurité, puis « Ouvrir quand même » à côté du message
+concernant p4kr.
+
+Linux : le binaire demande glibc 2.35 ou plus (Ubuntu 22.04 et suivants, Debian 12
+et suivants, Fedora 36 et suivants). Alpine n'est pas pris en charge.
+Rends le fichier exécutable une fois :
+
+    chmod +x p4kr
+
+
+6. LICENCE
+----------
+
+p4kr est sous double licence MIT ou Apache-2.0, au choix : voir LICENSE-MIT
+et LICENSE-APACHE.
+
+Non affilié à Cloud Imperium Games et non approuvé par elle. Star Citizen
+est une marque de Cloud Imperium Rights LLC. p4kr ne fournit ni données du
+jeu ni clé.

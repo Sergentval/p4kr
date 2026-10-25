@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="208" viewBox="0 0 760 208" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+<style>.g{font-size:13px;font-weight:600;fill:#202124}.t{font-size:12px;fill:#3c4043}.v{font-size:12px;fill:#202124}.h{font-size:15px;font-weight:700;fill:#202124}</style>
+<rect width="760" height="208" fill="#ffffff" rx="6"/>
+<text x="12" y="28" class="h">DataForge database to XML (lower is better)</text>
+<text x="12" y="60" class="g">Convert the DataForge database to XML (cold)</text>
+<rect x="230" y="66" width="5.5" height="18" fill="#2f7d4f" rx="2"/>
+<text x="224" y="79" class="t" text-anchor="end">p4kr</text>
+<text x="241.5" y="79" class="v">8.88 s</text>
+<rect x="230" y="88" width="408.5" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="101" class="t" text-anchor="end">unp4k + unforge</text>
+<text x="644.5" y="101" class="v">658.31 s ×74</text>
+<text x="12" y="132" class="g">Convert the DataForge database to XML (warm)</text>
+<rect x="230" y="138" width="5.1" height="18" fill="#2f7d4f" rx="2"/>
+<text x="224" y="151" class="t" text-anchor="end">p4kr</text>
+<text x="241.1" y="151" class="v">8.27 s</text>
+<rect x="230" y="160" width="410.0" height="18" fill="#9aa0a6" rx="2"/>
+<text x="224" y="173" class="t" text-anchor="end">unp4k + unforge</text>
+<text x="646.0" y="173" class="v">660.77 s ×80</text>
+</svg>
