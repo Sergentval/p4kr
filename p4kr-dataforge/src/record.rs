@@ -18,7 +18,7 @@ use crate::value::{f32_text, f64_text, guid_text};
 use crate::{Db, Fault};
 use array::Array;
 use p4kr_xmlwrite::names::{NameFault, NameKind, dotnet_name_fault, split_name};
-use p4kr_xmlwrite::{Child, Doc, Element, MAX_DATAFORGE_OUTPUT};
+use p4kr_xmlwrite::{Child, Doc, Element, MAX_OUTPUT};
 use std::borrow::Cow;
 use std::collections::HashSet;
 use std::hash::{BuildHasherDefault, Hasher};
@@ -27,17 +27,15 @@ use std::hash::{BuildHasherDefault, Hasher};
 const MAX_NODES: u32 = 10_000;
 /// Structs read by index and still open, beyond which the reference descends no further.
 const MAX_DEPTH: usize = 100;
-/// Deliberate deviation from the reference, like `MAX_DATAFORGE_OUTPUT`: an absurd record (pointers fanning out
+/// Deliberate deviation from the reference, like `MAX_OUTPUT`: an absurd record (pointers fanning out
 /// over 100 levels) would demand endless work. One step: a field, an array element, or a
 /// field range of an ancestor; beyond that, `TooMuchWork`. The estimated size (`size`, bounded by
-/// `MAX_DATAFORGE_OUTPUT`) also counts abandoned subtrees: it is a measure of work, not of the output.
-/// Scaled with `MAX_DATAFORGE_OUTPUT` (16 bytes of output per step): a real record that fits the size cap
-/// must not be stopped here first.
-const MAX_STEPS: u64 = 1 << 27;
+/// `MAX_OUTPUT`) also counts abandoned subtrees: it is a measure of work, not of the output.
+const MAX_STEPS: u64 = 1 << 24;
 /// Deliberate deviation, like `MAX_STEPS`: bytes of names and texts read per record, written or not (a
 /// name read then abandoned on a cycle costs no step but is re-read in full). Real names are
-/// tiny: the bound is far from any real output (at most `MAX_DATAFORGE_OUTPUT`).
-const MAX_SCANNED: u64 = 1 << 32;
+/// tiny: the bound is far from any real output (at most `MAX_OUTPUT`).
+const MAX_SCANNED: u64 = 1 << 30;
 /// Deliberate deviation: frames open at once. Inline classes nest with no depth bound;
 /// the reference calls itself recursively for each class and dies well before this number.
 const MAX_FRAMES: usize = 1 << 16;
@@ -282,7 +280,7 @@ impl<'a> Builder<'_, 'a> {
             {
                 return Err(Halt::Work);
             }
-            if self.size > MAX_DATAFORGE_OUTPUT as u64 {
+            if self.size > MAX_OUTPUT as u64 {
                 return Err(Halt::Size);
             }
             if let Some(got) = carry.take() {
