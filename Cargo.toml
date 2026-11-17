@@ -4,7 +4,7 @@ members = ["p4kr-core", "p4kr", "p4kr-cryxml", "p4kr-xmlwrite", "p4kr-dataforge"
 
 [workspace.package]
 edition = "2024"
-version = "1.0.0"
+version = "1.0.1"
 publish = false
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/Sergentval/p4kr"
