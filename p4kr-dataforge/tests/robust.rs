@@ -4,7 +4,7 @@
 //! inline classes nested 70,000 levels deep).
 
 use p4kr_dataforge::{Db, RecordError};
-use p4kr_xmlwrite::MAX_OUTPUT;
+use p4kr_xmlwrite::MAX_DATAFORGE_OUTPUT;
 use std::time::{Duration, Instant};
 
 const LIMIT: Duration = Duration::from_secs(2);
@@ -57,7 +57,11 @@ fn check_within(label: &str, bytes: &[u8], limit: Duration) -> Rendered {
     let t = Instant::now();
     let r = render_all(bytes);
     assert!(t.elapsed() < limit, "{label}: {:?}", t.elapsed());
-    assert!(r.1 <= MAX_OUTPUT, "{label}: output of {} bytes", r.1);
+    assert!(
+        r.1 <= MAX_DATAFORGE_OUTPUT,
+        "{label}: output of {} bytes",
+        r.1
+    );
     r
 }
 
@@ -371,9 +375,9 @@ fn fanned_out_pointers_are_bounded() {
     db.structure("Node", &[("kids", STRONG, SIMPLE_ARRAY, 0)], kinds, &data);
     db.record("Node.one", "a/one.xml", 0, 0);
     let bytes = db.build();
-    // The work goes up to the step cap (2^24): it is the outcome that is checked; the generous time
+    // The work goes up to the step cap (2^27): it is the outcome that is checked; the generous time
     // bound only serves to catch a cap that would no longer apply.
-    let (_, _, results) = check_within("fan-out", &bytes, Duration::from_secs(10));
+    let (_, _, results) = check_within("fan-out", &bytes, Duration::from_secs(60));
     assert_eq!(results, vec![Err(RecordError::TooMuchWork)]);
 }
 
@@ -492,7 +496,7 @@ fn a_long_name_read_behind_cycled_pointers_is_charged_to_the_work_budget() {
     );
     db.record("Node.one", "a/one.xml", 0, 0);
     let bytes = db.build();
-    let (_, _, results) = check_within("name re-read", &bytes, Duration::from_secs(20));
+    let (_, _, results) = check_within("name re-read", &bytes, Duration::from_secs(60));
     assert_eq!(results, vec![Err(RecordError::TooMuchWork)]);
 }
 

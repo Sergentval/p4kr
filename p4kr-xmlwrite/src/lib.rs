@@ -8,7 +8,7 @@ use names::NameFault;
 
 use std::borrow::Cow;
 
-pub use write::{MAX_OUTPUT, write};
+pub use write::{MAX_DATAFORGE_OUTPUT, MAX_OUTPUT, write};
 
 #[derive(Debug)]
 pub enum Child<'a> {
@@ -43,7 +43,7 @@ pub enum WriteError {
     NoRoot,
     #[error("CDATA section containing `]]>`")]
     CDataEnd,
-    /// Deliberate deviation from the reference: output is capped (see `MAX_OUTPUT`).
+    /// Deliberate deviation from the reference: output is capped (see `Profile::max_output`).
     #[error("XML output beyond the cap")]
     TooLarge,
     /// The `DataForge` profile follows `XmlWriter`, which rejects some names; `NameFault` keeps the stage and

@@ -20,18 +20,22 @@ struct Rules {
     escape_tab: bool,
     /// Names rejected the way `XmlWriter` does (first character, element prefix, `xmlns`).
     check_names: bool,
+    /// Output cap of the profile (`MAX_OUTPUT` or `MAX_DATAFORGE_OUTPUT`).
+    max_output: usize,
 }
 
 const DOCUMENT_SAVE: Rules = Rules {
     newline: b"\n",
     escape_tab: false,
     check_names: false,
+    max_output: MAX_OUTPUT,
 };
 
 const DATA_FORGE: Rules = Rules {
     newline: b"\r\n",
     escape_tab: true,
     check_names: true,
+    max_output: MAX_DATAFORGE_OUTPUT,
 };
 
 impl Profile {
@@ -41,13 +45,23 @@ impl Profile {
             Profile::DataForge => &DATA_FORGE,
         }
     }
+
+    /// Output cap of the profile: beyond it, `write` fails with `TooLarge`.
+    pub fn max_output(self) -> usize {
+        self.rules().max_output
+    }
 }
 
-/// Output cap: beyond it, `TooLarge` fails and nothing is written. Deliberate deviation from the reference,
+/// Output cap of the `DocumentSave` profile (CryXmlB): beyond it, `TooLarge` fails and nothing is written. Deliberate deviation from the reference,
 /// for absurd inputs only (a chain of 100,000 levels, 1 MB of content shared by thousands of
 /// nodes): real files are very far from it, and the reference itself falls over at such depths
 /// (.NET's recursive `WriteTo`). The check is an upper bound made before each growth.
 pub const MAX_OUTPUT: usize = 256 << 20;
+
+/// Output cap of the `DataForge` profile, higher than `MAX_OUTPUT`: a record is a whole tree with its
+/// strong pointers unfolded, and real 5.0 records (`ftl_careerboard.xml`) go beyond 256 MiB. It
+/// remains a bound against absurd records; the whole output is held in memory.
+pub const MAX_DATAFORGE_OUTPUT: usize = 2 << 30;
 
 #[derive(Clone, Copy)]
 struct Frame {
@@ -92,7 +106,7 @@ impl Writer<'_> {
     /// Refuses to grow the output by `n` bytes beyond the cap.
     fn room(&self, n: usize) -> Result<()> {
         match self.out.len().checked_add(n) {
-            Some(len) if len <= MAX_OUTPUT => Ok(()),
+            Some(len) if len <= self.rules.max_output => Ok(()),
             _ => Err(WriteError::TooLarge),
         }
     }
