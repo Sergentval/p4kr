@@ -106,7 +106,7 @@ Exit codes: 0 all good, 1 some entries are in error, 2 configuration,
 
 When a DataForge record has the same path as an archive entry, the record
 is written there and the entry is kept next to it as
-<name>.p4k-entry.<extension>, with a warning (exit code unchanged).
+<name>.p4k-entry.<extension>, silently (exit code unchanged).
 
 
 3. KEY FILE

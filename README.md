@@ -70,7 +70,7 @@ Converted XML files are written with LF line endings on every system. They are b
 
 ## DataForge record vs entry collision
 
-When a DataForge record has the same path as an archive entry already extracted (the raw file or the XML written next to it), the record takes that path and the entry is kept beside it as `<name>.p4k-entry.<extension>` (`<name>.p4k-entry` with no extension). p4kr prints a warning on standard error; the exit code is unchanged (0). These remain errors, with nothing moved: a collision with a `.dcb`, between two records, between a file and a folder, or a side name already taken.
+When a DataForge record has the same path as an archive entry already extracted (the raw file or the XML written next to it), the record takes that path and the entry is kept beside it as `<name>.p4k-entry.<extension>` (`<name>.p4k-entry` with no extension). This is silent and the exit code is unchanged (0): it happens on every game build (`tagdatabase.tagdatabase.xml`). These remain errors, with nothing moved: a collision with a `.dcb`, between two records, between a file and a folder, or a side name already taken.
 
 ## Key
 

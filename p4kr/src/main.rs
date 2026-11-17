@@ -152,10 +152,9 @@ fn load_key(path: Option<&Path>) -> Result<Option<Key>, u8> {
     })
 }
 
-/// Prints problems and warnings on standard error, then the summary on standard output;
-/// returns the exit code.
+/// Prints problems on standard error, then the summary on standard output; returns the exit code.
 fn emit(s: &Summary) -> u8 {
-    for p in s.problems.iter().chain(&s.notices) {
+    for p in &s.problems {
         eprintln!("{p}");
     }
     println!("{}", s.line);

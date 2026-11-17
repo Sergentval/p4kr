@@ -70,7 +70,7 @@ impl Job {
             lang::done_in(lang, started.elapsed().as_secs_f64())
         )?;
         let summary = extract_summary(&self.archive, &report, self.xml, lang);
-        for p in summary.problems.iter().chain(&summary.notices) {
+        for p in &summary.problems {
             writeln!(out, "{p}")?;
         }
         writeln!(out, "{}", summary.line)?;

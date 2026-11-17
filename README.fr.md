@@ -70,7 +70,7 @@ Les XML convertis sont écrits avec des fins de ligne LF sur tous les systèmes.
 
 ## Collision entre un enregistrement DataForge et une entrée
 
-Quand un enregistrement DataForge a le même chemin qu'une entrée de l'archive déjà extraite (fichier brut ou XML d'à-côté), l'enregistrement prend ce chemin et l'entrée est gardée à côté sous `<nom>.p4k-entry.<extension>` (`<nom>.p4k-entry` sans extension). p4kr affiche un avertissement sur la sortie d'erreur ; le code de sortie ne change pas (0). Restent des erreurs, sans rien déplacer : collision avec un `.dcb`, entre deux enregistrements, entre fichier et dossier, ou nom à côté déjà pris.
+Quand un enregistrement DataForge a le même chemin qu'une entrée de l'archive déjà extraite (fichier brut ou XML d'à-côté), l'enregistrement prend ce chemin et l'entrée est gardée à côté sous `<nom>.p4k-entry.<extension>` (`<nom>.p4k-entry` sans extension). C'est silencieux et le code de sortie ne change pas (0) : ça arrive à chaque version du jeu (`tagdatabase.tagdatabase.xml`). Restent des erreurs, sans rien déplacer : collision avec un `.dcb`, entre deux enregistrements, entre fichier et dossier, ou nom à côté déjà pris.
 
 ## Clé
 

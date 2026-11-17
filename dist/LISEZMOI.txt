@@ -105,8 +105,7 @@ sha256), --fail-fast (extract : s'arrête à la première entrée en erreur). Co
 
 Quand un enregistrement DataForge a le même chemin qu'une entrée de
 l'archive, l'enregistrement est écrit là et l'entrée est gardée à côté sous
-<nom>.p4k-entry.<extension>, avec un avertissement (code de sortie
-inchangé).
+<nom>.p4k-entry.<extension>, sans message (code de sortie inchangé).
 
 
 3. FICHIER DE CLÉ

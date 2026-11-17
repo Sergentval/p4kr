@@ -123,7 +123,6 @@ texts! {
     prompt_separator => ": ", " : ";
     unit_entries => "entries", "entrées";
     unit_records => "records", "enregistrements";
-    warning_prefix => "warning: ", "avertissement : ";
     record_word => "record", "enregistrement";
 }
 
@@ -343,16 +342,6 @@ pub fn record_io_error(l: Lang, name: &str, digest: &str, kind: &dyn std::fmt::D
     )
 }
 
-/// An entry moved aside because a DataForge record took its path.
-pub fn entry_displaced(l: Lang, from: &str, to: &str) -> String {
-    let sep = prompt_separator(l);
-    let what = match l {
-        Lang::En => format!("replaced by a DataForge record, entry kept as {to}"),
-        Lang::Fr => format!("remplacé par un enregistrement DataForge, entrée gardée sous {to}"),
-    };
-    format!("{}{from}{sep}{what}", warning_prefix(l))
-}
-
 /// Counters of an extraction summary; `xml` exists only with `--xml`.
 pub struct ExtractCounts {
     pub entries: usize,
@@ -527,10 +516,6 @@ mod tests {
         assert_eq!(
             dcb_line(Lang::Fr, 2, 1, 10),
             "2 enregistrement(s) écrit(s), 1 en échec, 10 octet(s)"
-        );
-        assert_eq!(
-            entry_displaced(Lang::Fr, "o/a.xml", "o/b.xml"),
-            "avertissement : o/a.xml : remplacé par un enregistrement DataForge, entrée gardée sous o/b.xml"
         );
         assert_eq!(
             record_io_error(Lang::Fr, "enregistrement", "ab12", &"x"),
