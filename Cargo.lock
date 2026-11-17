@@ -361,7 +361,7 @@ checksum = "384b8ab6d37215f3c5301a95a4accb5d64aa607f1fcb26a11b5303878451b4fe"
 
 [[package]]
 name = "p4kr"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "clap",
  "p4kr-core",
@@ -373,7 +373,7 @@ dependencies = [
 
 [[package]]
 name = "p4kr-core"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "aes",
  "cbc",
@@ -393,7 +393,7 @@ dependencies = [
 
 [[package]]
 name = "p4kr-cryxml"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "p4kr-xmlwrite",
  "serde_json",
@@ -402,7 +402,7 @@ dependencies = [
 
 [[package]]
 name = "p4kr-dataforge"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "p4kr-xmlwrite",
  "serde_json",
@@ -411,7 +411,7 @@ dependencies = [
 
 [[package]]
 name = "p4kr-xmlwrite"
-version = "1.0.1"
+version = "1.0.2"
 dependencies = [
  "serde_json",
  "thiserror",
