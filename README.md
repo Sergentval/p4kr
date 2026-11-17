@@ -44,11 +44,11 @@ On Windows use `p4kr.exe`; the examples use the Unix form.
 
 ```bash
 p4kr list ARCHIVE [selection]
-p4kr extract ARCHIVE --out DIR [selection] [--xml] [--verify] [--fail-fast] [--key-file K] [--threads N] [--quiet]
+p4kr extract ARCHIVE --out DIR [selection] [--xml [--skip-record PATH]...] [--verify] [--fail-fast] [--key-file K] [--threads N] [--quiet]
 p4kr verify ARCHIVE [selection] [--key-file K] [--threads N] [--quiet]
 p4kr cat ARCHIVE --exact PATH [--xml] [--key-file K]
 p4kr xml INPUT OUTPUT
-p4kr dcb FILE.dcb --out DIR [--threads N] [--quiet]
+p4kr dcb FILE.dcb --out DIR [--skip-record PATH]... [--threads N] [--quiet]
 ```
 
 - `extract --xml` converts binary XML (CryXmlB) in memory between reading and writing; the binary is written as is and the `.xml` next to it, like unp4k then unforge. A failed conversion is counted in the report (exit code 1).
@@ -58,6 +58,8 @@ p4kr dcb FILE.dcb --out DIR [--threads N] [--quiet]
 - `dcb` writes one XML file per record under `DIR`, at the record's path, byte for byte like unforge. Exit code 1 if the file is refused or a record fails.
 - `extract --xml` on a `.dcb` entry (extension exactly `.dcb`): the entry is written raw, then every record is written under the `.dcb`'s folder.
 - A `.dcb` file with an unknown format version (only version 8 is supported) or an inconsistent file (sizes, end of file, schema) is refused entirely, with a message saying what and where, and no XML is written. An absolute record path, one containing `..`, or an empty one refuses only that record.
+- A record whose XML would go beyond 256 MiB is not written: p4kr prints a warning with its path, and the exit code is unchanged (0). In 5.0, `libs/foundry/records/contracts/contractgenerator/interstellartransport_guild/ftl/ftl_careerboard.xml` is 4.6 GiB in unforge's output.
+- `--skip-record PATH` (`extract --xml`, `dcb`; repeatable, case-sensitive) leaves out a record path, or every record under a folder (`--skip-record libs/foundry/records/contracts`), as written in the record. A left-out record is neither rendered nor written and does not displace an entry.
 - Progress bar of `extract` and `verify`: on standard error, only if it is a terminal; `--quiet` removes it.
 
 ## Selecting entries

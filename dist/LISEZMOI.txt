@@ -107,6 +107,13 @@ Quand un enregistrement DataForge a le même chemin qu'une entrée de
 l'archive, l'enregistrement est écrit là et l'entrée est gardée à côté sous
 <nom>.p4k-entry.<extension>, sans message (code de sortie inchangé).
 
+Un enregistrement DataForge dont le XML dépasserait 256 Mio n'est pas écrit,
+avec un avertissement (code de sortie inchangé). --skip-record CHEMIN
+(extract --xml, dcb ; répétable) exclut un enregistrement ou un dossier
+d'enregistrements, par exemple :
+
+    ./p4kr extract Data.p4k --out sortie --xml --key-file cle.toml --skip-record libs/foundry/records/contracts/contractgenerator/interstellartransport_guild/ftl/ftl_careerboard.xml
+
 
 3. FICHIER DE CLÉ
 -----------------

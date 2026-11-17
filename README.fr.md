@@ -44,11 +44,11 @@ Sous Windows, utilise `p4kr.exe` ; les exemples sont à la forme Unix.
 
 ```bash
 p4kr list ARCHIVE [sélection]
-p4kr extract ARCHIVE --out DIR [sélection] [--xml] [--verify] [--fail-fast] [--key-file K] [--threads N] [--quiet]
+p4kr extract ARCHIVE --out DIR [sélection] [--xml [--skip-record CHEMIN]...] [--verify] [--fail-fast] [--key-file K] [--threads N] [--quiet]
 p4kr verify ARCHIVE [sélection] [--key-file K] [--threads N] [--quiet]
 p4kr cat ARCHIVE --exact CHEMIN [--xml] [--key-file K]
 p4kr xml ENTRÉE SORTIE
-p4kr dcb FICHIER.dcb --out DIR [--threads N] [--quiet]
+p4kr dcb FICHIER.dcb --out DIR [--skip-record CHEMIN]... [--threads N] [--quiet]
 ```
 
 - `extract --xml` convertit en mémoire les XML binaires (CryXmlB) entre la lecture et l'écriture ; le binaire est écrit tel quel, le `.xml` à côté, comme unp4k puis unforge. Une conversion en échec compte dans le rapport (code 1).
@@ -58,6 +58,8 @@ p4kr dcb FICHIER.dcb --out DIR [--threads N] [--quiet]
 - `dcb` écrit un XML par enregistrement sous `DIR`, au chemin de l'enregistrement, octet pour octet comme unforge. Code de sortie 1 si refus ou enregistrement en échec.
 - `extract --xml` sur une entrée `.dcb` (extension exactement `.dcb`) : l'entrée est écrite brute, puis chaque enregistrement est écrit sous le dossier du `.dcb`.
 - Un `.dcb` de version de format inconnue (seule la 8 est prise en charge) ou incohérent (tailles, fin de fichier, schéma) est refusé en entier, avec un message qui dit quoi et où, et aucun XML n'est écrit. Un chemin d'enregistrement absolu, avec `..` ou vide ne refuse que cet enregistrement.
+- Un enregistrement dont le XML dépasserait 256 Mio n'est pas écrit : p4kr affiche un avertissement avec son chemin, et le code de sortie ne change pas (0). En 5.0, `libs/foundry/records/contracts/contractgenerator/interstellartransport_guild/ftl/ftl_careerboard.xml` fait 4,6 Gio en sortie d'unforge.
+- `--skip-record CHEMIN` (`extract --xml`, `dcb` ; répétable, sensible à la casse) exclut un chemin d'enregistrement, ou tous les enregistrements sous un dossier (`--skip-record libs/foundry/records/contracts`), tel qu'écrit dans l'enregistrement. Un enregistrement exclu n'est ni rendu ni écrit et ne déplace aucune entrée.
 - Barre de progression de `extract` et `verify` : sur la sortie d'erreur, seulement si c'est un terminal ; `--quiet` la supprime.
 
 ## Choisir les entrées

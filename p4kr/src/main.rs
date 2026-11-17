@@ -1,7 +1,7 @@
 //! p4kr: list, extract and verify the entries of a Data.p4k archive.
 
 use clap::{Args, CommandFactory, Parser, Subcommand};
-use p4kr_core::dcb::write_outputs;
+use p4kr_core::dcb::{skip_filter, without_skipped, write_outputs};
 use p4kr_core::extract::{Extras, Options, extract_with};
 use p4kr_core::{Archive, Filter, Key, Verify};
 use p4kr_cryxml::{Outcome, convert};
@@ -60,6 +60,8 @@ enum Cmd {
         /// Convert binary XML to text XML, like unp4k + unforge
         #[arg(long)]
         xml: bool,
+        #[command(flatten)]
+        skip: SkipRecords,
         /// No progress bar
         #[arg(long)]
         quiet: bool,
@@ -85,6 +87,8 @@ enum Cmd {
         /// Number of threads (0 = all cores)
         #[arg(long, default_value_t = 0)]
         threads: usize,
+        #[command(flatten)]
+        skip: SkipRecords,
         /// No progress bar
         #[arg(long)]
         quiet: bool,
@@ -113,6 +117,14 @@ struct Selection {
     /// Extension, case-insensitive (e.g. `.xml`), repeatable
     #[arg(long)]
     ext: Vec<String>,
+}
+
+#[derive(Args)]
+struct SkipRecords {
+    /// DataForge record path or folder of records to leave out (e.g.
+    /// `libs/foundry/records/contracts`), case-sensitive, repeatable; with extract: needs --xml
+    #[arg(long = "skip-record", value_name = "PATH")]
+    paths: Vec<String>,
 }
 
 #[derive(Args)]
@@ -152,13 +164,27 @@ fn load_key(path: Option<&Path>) -> Result<Option<Key>, u8> {
     })
 }
 
-/// Prints problems on standard error, then the summary on standard output; returns the exit code.
+/// Prints problems and warnings on standard error, then the summary on standard output;
+/// returns the exit code.
 fn emit(s: &Summary) -> u8 {
-    for p in &s.problems {
+    for p in s.problems.iter().chain(&s.notices) {
         eprintln!("{p}");
     }
     println!("{}", s.line);
     s.code
+}
+
+/// Adds a warning when `--skip-record` was given but left out no record.
+fn with_skip_notice(s: Summary, asked: bool, skipped: usize) -> Summary {
+    if !asked || skipped > 0 {
+        return s;
+    }
+    let notices = s
+        .notices
+        .into_iter()
+        .chain([lang::skip_matched_nothing(CLI_LANG)])
+        .collect();
+    Summary { notices, ..s }
 }
 
 /// Settings of a read, apart from the selection and the archive.
@@ -176,6 +202,7 @@ fn run_read(
     sel: &Selection,
     out: Option<&Path>,
     mode: Mode,
+    skip: Option<&Filter>,
 ) -> Result<u8, u8> {
     let key = load_key(read.key_file.as_deref())?;
     let a = open(archive)?;
@@ -192,11 +219,21 @@ fn run_read(
         xml: mode.xml,
         progress: Some(bar.counter()),
         records: Some(bar.records()),
+        skip_records: skip,
     };
     let result = extract_with(&a, &indices, &opts, &extras);
     bar.finish();
     match result {
-        Ok(r) => Ok(emit(&extract_summary(&a, &r, mode.xml, CLI_LANG))),
+        Ok(r) => {
+            let skipped = r
+                .dcb
+                .iter()
+                .flat_map(|(_, d)| d.as_ref().ok())
+                .map(|d| d.skipped)
+                .sum();
+            let summary = extract_summary(&a, &r, mode.xml, CLI_LANG);
+            Ok(emit(&with_skip_notice(summary, skip.is_some(), skipped)))
+        }
         Err(e) => {
             eprintln!("extraction refused: {e}");
             Err(1)
@@ -204,7 +241,13 @@ fn run_read(
     }
 }
 
-fn run_dcb(input: &Path, out: &Path, threads: usize, quiet: bool) -> Result<u8, u8> {
+fn run_dcb(
+    input: &Path,
+    out: &Path,
+    threads: usize,
+    skip: Option<&Filter>,
+    quiet: bool,
+) -> Result<u8, u8> {
     let data = std::fs::read(input).map_err(|e| {
         eprintln!("cannot read: {e}");
         1
@@ -213,7 +256,7 @@ fn run_dcb(input: &Path, out: &Path, threads: usize, quiet: bool) -> Result<u8, 
         eprintln!("DataForge file refused: {e}");
         1
     })?;
-    let outputs = db.outputs();
+    let (outputs, skipped) = without_skipped(db.outputs(), skip);
     let bar = progress::Progress::start_records(outputs.len(), quiet, CLI_LANG);
     let result = write_outputs(
         &db,
@@ -228,7 +271,8 @@ fn run_dcb(input: &Path, out: &Path, threads: usize, quiet: bool) -> Result<u8, 
         eprintln!("write refused: {e}");
         1
     })?;
-    Ok(emit(&dcb_summary(&d, CLI_LANG)))
+    let summary = dcb_summary(&d, CLI_LANG);
+    Ok(emit(&with_skip_notice(summary, skip.is_some(), skipped)))
 }
 
 fn run_xml(input: &Path, output: &Path) -> Result<u8, u8> {
@@ -331,15 +375,21 @@ fn run(cmd: Option<Cmd>) -> Result<u8, u8> {
             verify,
             fail_fast,
             xml,
+            skip,
             quiet,
         } => {
+            if !xml && !skip.paths.is_empty() {
+                eprintln!("--skip-record needs --xml");
+                return Err(2);
+            }
             let mode = Mode {
                 verify: if verify { Verify::Full } else { Verify::Crc },
                 fail_fast,
                 xml,
                 quiet,
             };
-            run_read(&archive, &read, &sel, Some(&out), mode)
+            let skip = skip_filter(&skip.paths);
+            run_read(&archive, &read, &sel, Some(&out), mode, skip.as_ref())
         }
         Cmd::Verify {
             archive,
@@ -353,14 +403,21 @@ fn run(cmd: Option<Cmd>) -> Result<u8, u8> {
                 xml: false,
                 quiet,
             };
-            run_read(&archive, &read, &sel, None, mode)
+            run_read(&archive, &read, &sel, None, mode, None)
         }
         Cmd::Dcb {
             input,
             out,
             threads,
+            skip,
             quiet,
-        } => run_dcb(&input, &out, threads, quiet),
+        } => run_dcb(
+            &input,
+            &out,
+            threads,
+            skip_filter(&skip.paths).as_ref(),
+            quiet,
+        ),
         Cmd::Xml { input, output } => run_xml(&input, &output),
         Cmd::Cat {
             archive,

@@ -2,7 +2,7 @@
 //! temporary file then rename. Without an output folder: read in memory only.
 
 use crate::dcb::{self, DcbReport};
-use crate::select::{claim_key, target};
+use crate::select::{Filter, claim_key, target};
 use crate::{Archive, Key, P4kError, Result, Verify};
 use p4kr_cryxml::{Outcome, convert, is_dataforge};
 use p4kr_dataforge::DcbError;
@@ -43,6 +43,8 @@ pub struct Extras<'a> {
     pub progress: Option<&'a AtomicUsize>,
     /// DataForge phase (after the entries): records to write and already written, for a second bar.
     pub records: Option<&'a RecordProgress>,
+    /// DataForge records left out (see `dcb::skip_filter`); `None` = all written.
+    pub skip_records: Option<&'a Filter>,
 }
 
 /// Counters of the DataForge phase. `total` grows by the number of records of each `.dcb` just
@@ -489,15 +491,7 @@ pub fn extract_with(
         Some(root) if extras.xml && !(opts.fail_fast && !errors.is_empty()) => {
             let (dcbs, sides) = (take(&state.dcbs), take(&state.sides));
             let taken = dcb::taken_targets(a, root, &order, &sides);
-            dcb::convert_all(
-                a,
-                root,
-                &dcbs,
-                &taken,
-                opts.threads,
-                extras.records,
-                &mut errors,
-            )
+            dcb::convert_all(a, root, &dcbs, &taken, opts.threads, extras, &mut errors)
         }
         _ => Vec::new(),
     };

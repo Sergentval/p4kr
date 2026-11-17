@@ -87,6 +87,7 @@ fn extraction_writes_the_same_tree_as_unp4k_then_unforge() {
                 xml: true,
                 progress: Some(&done),
                 records: None,
+                skip_records: None,
             },
         )
         .unwrap();
@@ -134,6 +135,7 @@ fn a_side_file_never_overwrites_another_entry() {
             xml: true,
             progress: None,
             records: None,
+            skip_records: None,
         },
     )
     .unwrap();
@@ -185,6 +187,7 @@ fn two_side_files_on_one_target_are_both_refused() {
             xml: true,
             progress: None,
             records: None,
+            skip_records: None,
         },
     )
     .unwrap();
@@ -215,6 +218,7 @@ fn a_failed_side_write_keeps_the_byte_count_exact() {
             xml: true,
             progress: Some(&done),
             records: None,
+            skip_records: None,
         },
     )
     .unwrap();
@@ -419,5 +423,36 @@ fn an_entry_stays_in_place_when_its_record_is_skipped_or_fails_to_render() {
     assert_eq!(
         d.displaced,
         [(data.join("good.xml"), data.join("good.p4k-entry.xml"))]
+    );
+}
+
+#[test]
+fn a_skipped_record_is_not_written_and_leaves_its_entry_in_place() {
+    let tmp = tempfile::tempdir().unwrap();
+    let out = tmp.path().join("out");
+    let a = Archive::open(&common::testdata("record-over-entry.p4k")).unwrap();
+    let skip = p4kr_core::dcb::skip_filter(&["other.xml".into(), "free.xml".into()]);
+    let r = extract_with(
+        &a,
+        &a.select(&Filter::All),
+        &opts(&out, 2),
+        &Extras {
+            xml: true,
+            skip_records: skip.as_ref(),
+            ..Extras::default()
+        },
+    )
+    .unwrap();
+    let data = out.join("Data");
+    // the entry keeps its path, nothing is put aside, the free path stays empty
+    assert_eq!(std::fs::read(data.join("other.xml")).unwrap(), b"<a/>");
+    assert!(!data.join("other.p4k-entry.xml").exists());
+    assert!(!data.join("free.xml").exists());
+    let d = r.dcb[0].1.as_ref().unwrap();
+    assert_eq!((d.records, d.skipped), (2, 2));
+    assert!(
+        d.displaced
+            .iter()
+            .all(|(from, _)| *from != data.join("other.xml"))
     );
 }

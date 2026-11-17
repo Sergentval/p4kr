@@ -11,6 +11,8 @@ pub struct Summary {
     pub line: String,
     /// One line per error, refusal or failure (standard error), in the current order.
     pub problems: Vec<String>,
+    /// One line per warning (standard error), without effect on `code`.
+    pub notices: Vec<String>,
     /// Exit code: 1 if at least one entry, XML conversion or record failed, otherwise 0.
     pub code: u8,
 }
@@ -28,12 +30,21 @@ fn failed_lines(lang: Lang, name: &str, d: &DcbReport) -> Vec<String> {
     failed.chain(io).collect()
 }
 
+/// Warnings of a `.dcb`: records over the output cap.
+fn notice_lines(lang: Lang, name: &str, d: &DcbReport) -> Vec<String> {
+    d.oversized
+        .iter()
+        .map(|path| lang::record_oversized(lang, name, path))
+        .collect()
+}
+
 /// Summary of an extraction or a verification. An entry moved aside in favour of a record
 /// (`DcbReport::displaced`, e.g. `tagdatabase.tagdatabase.xml` on every game build) is expected and
 /// stays silent: the record takes the path, the entry is kept as `<name>.p4k-entry.<extension>`.
 pub fn extract_summary(a: &Archive, r: &Report, xml: bool, lang: Lang) -> Summary {
     let sep = lang::prompt_separator(lang);
     let mut problems = Vec::new();
+    let mut notices = Vec::new();
     for (i, e) in &r.errors {
         problems.push(format!(
             "{}{sep}{}{sep}{e}",
@@ -53,6 +64,7 @@ pub fn extract_summary(a: &Archive, r: &Report, xml: bool, lang: Lang) -> Summar
                 records += d.records;
                 dcb_failed |= !d.failed.is_empty();
                 problems.extend(failed_lines(lang, name, d));
+                notices.extend(notice_lines(lang, name, d));
             }
             Err(e) => {
                 dcb_failed = true;
@@ -74,6 +86,7 @@ pub fn extract_summary(a: &Archive, r: &Report, xml: bool, lang: Lang) -> Summar
     Summary {
         line,
         problems,
+        notices,
         code,
     }
 }
@@ -83,6 +96,7 @@ pub fn dcb_summary(d: &DcbReport, lang: Lang) -> Summary {
     Summary {
         line: lang::dcb_line(lang, d.records, d.failed.len(), d.bytes),
         problems: failed_lines(lang, lang::record_word(lang), d),
+        notices: notice_lines(lang, lang::record_word(lang), d),
         code: u8::from(!d.failed.is_empty()),
     }
 }
@@ -98,8 +112,42 @@ mod tests {
             failed: vec![("ab12".to_string(), RecordError::Collision)],
             bytes: 10,
             io_errors: Vec::new(),
-            displaced: Vec::new(),
+            ..DcbReport::default()
         }
+    }
+
+    fn oversized_dcb() -> DcbReport {
+        DcbReport {
+            records: 1,
+            oversized: vec!["libs/big.xml".to_string()],
+            ..DcbReport::default()
+        }
+    }
+
+    #[test]
+    fn an_oversized_record_is_a_warning_and_not_a_failure() {
+        let s = dcb_summary(&oversized_dcb(), Lang::En);
+        assert!(s.problems.is_empty());
+        assert_eq!(s.code, 0);
+        assert_eq!(
+            s.notices,
+            [
+                "warning: record: record libs/big.xml: not written, XML beyond 256 MiB (leave it out with --skip-record)"
+            ]
+        );
+        let mut r = empty_report();
+        r.dcb.push((0, Ok(oversized_dcb())));
+        let s = extract_summary(&archive(), &r, true, Lang::Fr);
+        assert!(s.problems.is_empty());
+        assert_eq!(s.code, 0);
+        assert_eq!(
+            s.notices,
+            [lang::record_oversized(
+                Lang::Fr,
+                archive().name(0).unwrap_or("?"),
+                "libs/big.xml"
+            )]
+        );
     }
 
     #[test]

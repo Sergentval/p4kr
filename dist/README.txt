@@ -108,6 +108,12 @@ When a DataForge record has the same path as an archive entry, the record
 is written there and the entry is kept next to it as
 <name>.p4k-entry.<extension>, silently (exit code unchanged).
 
+A DataForge record whose XML would go beyond 256 MiB is not written, with a
+warning (exit code unchanged). --skip-record PATH (extract --xml, dcb;
+repeatable) leaves out a record or a folder of records, for example:
+
+    ./p4kr extract Data.p4k --out out --xml --key-file k.toml --skip-record libs/foundry/records/contracts/contractgenerator/interstellartransport_guild/ftl/ftl_careerboard.xml
+
 
 3. KEY FILE
 -----------

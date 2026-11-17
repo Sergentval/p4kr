@@ -2,7 +2,7 @@
 //! temporary file `{TMP_PREFIX}d{entry}-{n}` (`.p4kr-tmp:` off Windows, `.p4kr-tmp~` on Windows) then rename, in parallel.
 
 use crate::extract::{TMP_PREFIX, ensure_free, xml_target};
-use crate::select::{claim_key, has_tmp_prefix, target};
+use crate::select::{Filter, claim_key, has_tmp_prefix, target};
 use crate::{Archive, P4kError, Result};
 use p4kr_dataforge::{Db, DcbError, Output, RecordError, safe_relative};
 use rayon::prelude::*;
@@ -25,6 +25,39 @@ pub struct DcbReport {
     pub io_errors: Vec<(String, io::ErrorKind)>,
     /// Entries displaced in favour of a record: (original path, new path).
     pub displaced: Vec<(PathBuf, PathBuf)>,
+    /// Records not written because their XML goes beyond the output cap (`RecordError::TooLarge`):
+    /// output path, control and invisible characters escaped (`printable`). A warning, not a failure: the cap is p4kr's own limit,
+    /// the record itself is sound (5.0's `ftl_careerboard.xml` is 4.6 GiB in the reference's output).
+    pub oversized: Vec<String>,
+    /// Records left out on request (`skip_filter`), neither rendered nor written.
+    pub skipped: usize,
+}
+
+/// Records to leave out: each path is a record path or a folder of records (every record below it),
+/// `/` or `\`, case-sensitive like `--prefix`. `None` without any path.
+pub fn skip_filter(paths: &[String]) -> Option<Filter> {
+    (!paths.is_empty()).then(|| {
+        Filter::any(
+            paths
+                .iter()
+                .flat_map(|p| [Filter::exact(p), Filter::prefix(p)])
+                .collect(),
+        )
+    })
+}
+
+/// Splits `outputs` into those to write and the number left out by `skip`.
+pub fn without_skipped(outputs: Vec<Output>, skip: Option<&Filter>) -> (Vec<Output>, usize) {
+    let Some(skip) = skip else {
+        return (outputs, 0);
+    };
+    let total = outputs.len();
+    let kept: Vec<Output> = outputs
+        .into_iter()
+        .filter(|o| !skip.matches(&o.path))
+        .collect();
+    let skipped = total - kept.len();
+    (kept, skipped)
 }
 
 enum Done {
@@ -32,6 +65,21 @@ enum Done {
     Skipped,
     Failed(RecordError),
     Io(io::ErrorKind),
+}
+
+/// `path` safe to print on a terminal and to paste back into `--skip-record`: control characters and
+/// invisible format characters (bidi, zero-width) are escaped like `escape_debug`, the rest is as is.
+fn printable(path: &str) -> String {
+    let invisible = |c: char| matches!(c, '\u{200B}'..='\u{200F}' | '\u{202A}'..='\u{202E}' | '\u{2060}'..='\u{206F}' | '\u{FEFF}');
+    path.chars()
+        .map(|c| {
+            if c.is_control() || invisible(c) {
+                c.escape_debug().to_string()
+            } else {
+                c.to_string()
+            }
+        })
+        .collect()
 }
 
 fn path_digest(path: &str) -> String {
@@ -408,6 +456,9 @@ fn tally(outputs: &[Output], dir: &Path, results: Vec<Done>) -> (DcbReport, Vec<
                 written.extend(usable_relative(&o.path).map(|rel| dir.join(rel)));
             }
             Done::Skipped => {}
+            Done::Failed(RecordError::TooLarge) => {
+                report.oversized.push(printable(&o.path));
+            }
             Done::Failed(e) => report.failed.push((path_digest(&o.path), e)),
             Done::Io(kind) => {
                 let digest = path_digest(&o.path);
@@ -478,7 +529,7 @@ pub(crate) fn convert_all(
     dcbs: &[usize],
     taken: &HashSet<PathBuf>,
     threads: usize,
-    records: Option<&crate::extract::RecordProgress>,
+    extras: &crate::extract::Extras<'_>,
     errors: &mut Vec<(usize, P4kError)>,
 ) -> Vec<(usize, std::result::Result<DcbReport, DcbError>)> {
     let mut sorted = dcbs.to_vec();
@@ -495,7 +546,7 @@ pub(crate) fn convert_all(
             taken: &hard,
             yielding: &yielding,
         };
-        match convert_one(a, root, i, &reserved, threads, records) {
+        match convert_one(a, root, i, &reserved, threads, extras) {
             Ok(Ok((r, written))) => {
                 hard.extend(written.iter().map(|p| claim_key(p)));
                 done.push((i, Ok(r)));
@@ -516,7 +567,7 @@ fn convert_one(
     i: usize,
     reserved: &Reserved<'_>,
     threads: usize,
-    records: Option<&crate::extract::RecordProgress>,
+    extras: &crate::extract::Extras<'_>,
 ) -> Result<Converted> {
     let path = a
         .name(i)
@@ -528,8 +579,8 @@ fn convert_one(
         Ok(db) => db,
         Err(e) => return Ok(Err(e)),
     };
-    let outputs = db.outputs();
-    if let Some(r) = records {
+    let (outputs, skipped) = without_skipped(db.outputs(), extras.skip_records);
+    if let Some(r) = extras.records {
         r.total.fetch_add(outputs.len(), Relaxed);
     }
     write_job(
@@ -539,9 +590,9 @@ fn convert_one(
         reserved,
         threads,
         i,
-        records.map(|r| &r.done),
+        extras.records.map(|r| &r.done),
     )
-    .map(Ok)
+    .map(|(report, written)| Ok((DcbReport { skipped, ..report }, written)))
 }
 
 #[cfg(test)]
@@ -565,6 +616,45 @@ mod tests {
             !cfg!(any(windows, target_os = "macos"))
         );
         assert_eq!(usable_relative("a:b/c.xml").is_some(), !cfg!(windows));
+    }
+
+    #[test]
+    fn skip_filter_takes_record_paths_and_folders() {
+        assert!(skip_filter(&[]).is_none());
+        let f = skip_filter(&["libs/a".into(), "libs\\b.xml".into()]).expect("filter");
+        assert!(f.matches("libs/a/x.xml"));
+        assert!(f.matches("libs/a"));
+        assert!(f.matches("libs/b.xml"));
+        assert!(!f.matches("libs/ab.xml"));
+        assert!(!f.matches("libs/b.xml.bak"));
+        assert!(!f.matches("Libs/a/x.xml"));
+    }
+
+    #[test]
+    fn without_skipped_keeps_the_order_and_counts_the_rest() {
+        let all = vec![out("a/1.xml", 0), out("b/2.xml", 1), out("a/3.xml", 2)];
+        assert_eq!(without_skipped(all.clone(), None), (all.clone(), 0));
+        let f = skip_filter(&["a".into()]);
+        assert_eq!(
+            without_skipped(all, f.as_ref()),
+            (vec![out("b/2.xml", 1)], 2)
+        );
+    }
+
+    #[test]
+    fn an_oversized_record_is_reported_by_path_and_not_as_a_failure() {
+        let outputs = [out("a/b\\ig\n\u{202E}.xml", 0), out("a/bad.xml", 1)];
+        let results = vec![
+            Done::Failed(RecordError::TooLarge),
+            Done::Failed(RecordError::TooMuchWork),
+        ];
+        let (r, written) = tally(&outputs, Path::new("d"), results);
+        assert_eq!(r.oversized, ["a/b\\ig\\n\\u{202e}.xml"]);
+        assert_eq!(
+            r.failed,
+            [(path_digest("a/bad.xml"), RecordError::TooMuchWork)]
+        );
+        assert!(written.is_empty());
     }
 
     fn out(p: &str, record: u32) -> Output {

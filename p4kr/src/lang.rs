@@ -124,6 +124,7 @@ texts! {
     unit_entries => "entries", "entrées";
     unit_records => "records", "enregistrements";
     record_word => "record", "enregistrement";
+    warning_prefix => "warning: ", "avertissement : ";
 }
 
 /// `[Y/n]` or `[y/N]` in English, `[O/n]` or `[o/N]` in French.
@@ -330,6 +331,32 @@ pub fn dataforge_refused(l: Lang, name: &str, err: &dyn std::fmt::Display) -> St
 pub fn record_failed(l: Lang, name: &str, digest: &str, err: &dyn std::fmt::Display) -> String {
     let sep = prompt_separator(l);
     format!("{name}{sep}{} {digest}{sep}{err}", record_word(l))
+}
+
+/// A record not written because its XML goes beyond the output cap: a warning, with the way out.
+pub fn record_oversized(l: Lang, name: &str, path: &str) -> String {
+    let sep = prompt_separator(l);
+    let what = match l {
+        Lang::En => "not written, XML beyond 256 MiB (leave it out with --skip-record)",
+        Lang::Fr => "non écrit, XML au-delà de 256 Mio (à exclure avec --skip-record)",
+    };
+    format!(
+        "{}{name}{sep}{} {path}{sep}{what}",
+        warning_prefix(l),
+        record_word(l)
+    )
+}
+
+/// `--skip-record` given, but no record left out: likely a typo or a different case.
+pub fn skip_matched_nothing(l: Lang) -> String {
+    format!(
+        "{}{}",
+        warning_prefix(l),
+        l.pick(
+            "--skip-record left out no record (paths are case-sensitive, as written in the record)",
+            "--skip-record n'a exclu aucun enregistrement (chemins sensibles à la casse, tels qu'écrits dans l'enregistrement)"
+        )
+    )
 }
 
 /// One record of a `.dcb` that hit an I/O error of the given kind.

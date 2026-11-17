@@ -53,6 +53,7 @@ impl Job {
             xml: self.xml,
             progress: Some(bar.counter()),
             records: Some(bar.records()),
+            skip_records: None,
         };
         let started = Instant::now();
         let result = extract_with(&self.archive, &self.indices, &opts, &extras);
@@ -70,7 +71,7 @@ impl Job {
             lang::done_in(lang, started.elapsed().as_secs_f64())
         )?;
         let summary = extract_summary(&self.archive, &report, self.xml, lang);
-        for p in &summary.problems {
+        for p in summary.problems.iter().chain(&summary.notices) {
             writeln!(out, "{p}")?;
         }
         writeln!(out, "{}", summary.line)?;
